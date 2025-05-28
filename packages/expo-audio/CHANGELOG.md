@@ -6,6 +6,8 @@
 
 ### 🎉 New features
 
+- [iOS] Support lock screen controls.
+
 ### 🐛 Bug fixes
 
 - [iOS] Fixed status property bug when track finishes ([#37389](https://github.com/expo/expo/pull/37389) by [@adiktiv](https://github.com/adiktiv))

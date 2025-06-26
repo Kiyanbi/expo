@@ -915,6 +915,19 @@ export async function initAsync(
     }
   }
 
+  await fs.appendFile(
+    path.join(projectRoot, 'android', 'app', 'build.gradle'),
+    [
+      '',
+      '// [Detox] AGP 8 fixed the `testProguardFiles` for androidTest',
+      'android.buildTypes.release {',
+      '   testProguardFiles "proguard-rules.pro"',
+      '}',
+      '',
+    ].join('\n'),
+    'utf-8'
+  );
+
   // Cleanup local updates module if needed
   if (cleanupLocalUpdatesModule) {
     await cleanupLocalUpdatesModule();
